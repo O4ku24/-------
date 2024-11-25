@@ -1,0 +1,14 @@
+{% extends "todo/base.html" %}
+{%block body%}
+    <div style="text-align: center;"><h1>Добавить задачу</h1></div>
+    <form action="/tasks/add/", method="post">
+        {% csrf_token %}
+        <input type="text">Title
+        <input type="text">Descreption
+        <input type="time">Dead Line
+    </form>
+
+    <div>
+        <h1 style="text-align: center;">Tasks List</h1>
+    </div>
+{%endblock%}
