@@ -23,5 +23,6 @@ urlpatterns = [
     path('home/', home, name='home'),
     path('reg/', registation, name='registation'),
     path('tasks/', tasks, name='tasks'),
-    path('auth/', auth, name='auth')
+    path('auth/', auth, name='auth'),
+    path('tasks/add/', tasks, name='tasks')
 ]

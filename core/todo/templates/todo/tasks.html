@@ -1,14 +1,23 @@
-{% extends "todo/base.html" %}
+{% include "todo/base.html" %}
+
+
+
 {%block body%}
     <div style="text-align: center;"><h1>Добавить задачу</h1></div>
-    <form action="/tasks/add/", method="post">
+    <form action="/tasks/add/" method="post" style="text-align: center; display: grid; padding-left: 100px; padding-right: 100px;">
         {% csrf_token %}
-        <input type="text">Title
-        <input type="text">Descreption
-        <input type="time">Dead Line
+        <input type="text" name="title">Title
+        <input type="text" name="description">Descreption
+        <input type="datetime-local" name="deadline">Dead Line
+        <button type="submit">Добавить</button>
     </form>
 
     <div>
-        <h1 style="text-align: center;">Tasks List</h1>
+        {% for key in data %}
+            {% for i in key %}
+                <p style="text-align: center;">{{i}}</p>
+            {% endfor %}
+        <p>{{ key }}</p>
+        {% endfor %}
     </div>
 {%endblock%}

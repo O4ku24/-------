@@ -1,8 +1,10 @@
-{% extends "todo/base.html" %}
+{% include "todo/base.html" %}
 {%block body%}
     <div style="text-align: center;"><h1>Авторизация</h1></div>
-    <form action="/auth/">
+    <form style="text-align: center; display: grid; padding-left: 10vh; padding-right: 10vh;" action="/auth/" method="post">
+        {% csrf_token %}
         <input type="text">Login
         <input type="password">Password
+        <button type="submit">Войти</button>
     </form>
 {%endblock%}
